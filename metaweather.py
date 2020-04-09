@@ -12,7 +12,10 @@ def confirmed_location(result2):
 
 def find_temp(result2):
     cons_dict = result2.json()
-    return cons_dict['consolidated_weather'][0]['the_temp']
+    temptotal = 0
+    for i in range(len(cons_dict['consolidated_weather'])):
+        temptotal += cons_dict['consolidated_weather'][i]['the_temp']
+    return temptotal/(len(cons_dict['consolidated_weather']))
             
 location = input("Please type in the location of which temperature you'd like to know about: ")
 

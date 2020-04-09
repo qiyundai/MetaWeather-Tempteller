@@ -24,11 +24,12 @@ loca = {'query': location}
 r1 = requests.get("https://www.metaweather.com/api/location/search/", params=loca)
 
 r_list = r1.json()
+print(r_list)
 
-ID = select(r_list)
+# ID = select(r_list)
 
-r2 = requests.get(f'https://www.metaweather.com/api/location/{ID}')
+# r2 = requests.get(f'https://www.metaweather.com/api/location/{ID}')
 
-current_temp = find_temp(r2)
+# current_temp = find_temp(r2)
 
-print(f'Found it for you, my dear. The current temperature at {confirmed_location(r2)} is C°{current_temp}.')
+# print(f'Found it for you, my dear. The current temperature at {confirmed_location(r2)} is C°{current_temp}.')
